@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💎 Diamantový risk · 5x5</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-container">
+    <!-- JEDNA TABULKA: sazka 5–100 + min/max -->
+    <div class="bet-panel">
+        <span class="bet-label">💰 Sázka (5–100):</span>
+        <div class="bet-input-area">
+            <input type="number" id="betInput" class="bet-input" value="10" min="5" max="100" step="1">
+            <div class="minmax">
+                <span id="minBet">MIN</span>
+                <span id="maxBet">MAX</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Počet bomb + selector -->
+    <div class="bomb-row">
+        <span class="bomb-label">💣 Bomby:</span>
+        <span class="bomb-number" id="bombDisplay">3</span>
+        <div class="bomb-picker" id="bombSelector">
+            <span class="bomb-option" data-bombs="1">1</span>
+            <span class="bomb-option selected" data-bombs="3">3</span>
+            <span class="bomb-option" data-bombs="6">6</span>
+            <span class="bomb-option" data-bombs="24">24</span>
+        </div>
+    </div>
+
+    <!-- cashout / nová hra -->
+    <div class="cashout-row">
+        <span class="next-cashout">💎 Výhra za diamant:</span>
+        <span class="next-value" id="winPerDiamond">+25</span>
+        <button class="cashout-btn" id="newGameBtn">NOVÁ HRA</button>
+    </div>
+
+    <!-- Hrací pole 5x5 -->
+    <div class="board" id="board"></div>
+
+    <!-- spodní lišta: peníze + reset (pouze resetuje pole, ne peníze) -->
+    <div class="bottom-coins">
+        <span class="info-text">💰 Tvé coiny</span>
+        <span class="coins" id="coinDisplay">10000</span>
+        <span class="reset-icon" id="resetBoardBtn">↻ pole</span>
+    </div>
+    <div id="gameOverMsg" style="text-align: center; color: #ffa07a; font-weight: bold; margin-top: 10px;"></div>
+</div>
+
+<script src="java.js"></script>
+</body>
+</html>
